@@ -26,11 +26,11 @@ public class BankApp {
                                       /// Getter Setters ////
         // BankAccountCreation.returnBankAccountNames() -> Returns bank account names
         // BankAccountCreation.returnBankAccountPins() -> Returns bank account pins
-        // BankAccountCreation.returnBankAccountRouteNum() -> Returns bank account route numbers
+        // BankAccountCreation.returnBankAccountRouteNums() -> Returns bank account route numbers
 
         for (String BANK_ACCOUNT_NAMES : BankAccountCreation.returnBankAccountNames()) {
 
-            System.out.print(BANK_ACCOUNT_NAMES + " : " + BankAccountCreation.returnBankAccountPins() + " : " + BankAccountCreation.returnBankAccountRouteNum());
+            System.out.print(BANK_ACCOUNT_NAMES + " : " + BankAccountCreation.returnBankAccountPins() + " : " + BankAccountCreation.returnBankAccountRouteNums() + " : " + BankAccountCreation.returnBankAccountBalance());
             System.out.println();
 
         }

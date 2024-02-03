@@ -68,19 +68,13 @@ public class BankMainMenu {
 
         // Let user choose which options and check if the options are valid
         int USER_NAVIGATION_CHOICE = validateUserNavigationChoice();
-        ArrayList<String> ACCOUNT_
-        boolean INVALID_INPUT = true;
+        int ACCOUNTS_SIZE = BankAccountCreation.getBankAccountNamesSize();
 
-        while (INVALID_INPUT) {
-            if (USER_NAVIGATION_CHOICE < 0 || USER_NAVIGATION_CHOICE > ) {
-                if
+        if (USER_NAVIGATION_CHOICE !=0) { // If user input !=0, then the account will be accessed
+            System.out.println("You chose to login to bank account (" + USER_NAVIGATION_CHOICE +") " + BankAccountCreation.getBankAccountNames(USER_NAVIGATION_CHOICE-1));
 
-                System.out.println("You chose to login to bank account (" + USER_NAVIGATION_CHOICE +") " + BankAccountCreation.getBankAccountNames(USER_NAVIGATION_CHOICE-1));
-
-            }
-        }
-
-        BankAccountActions.accessAuthenticateLogin(USER_NAVIGATION_CHOICE);
+            BankAccountActions.accessAuthenticateLogin(USER_NAVIGATION_CHOICE);
+        } // else, they will be redirected back to the main menu. No need for an else statement
 
     }
 
@@ -90,7 +84,7 @@ public class BankMainMenu {
         // If user input is not an integer, more than the number of bank accounts, or less than 0 (error is shown)
         while (!scnr.hasNextInt() || (USER_NAVIGATION_CHOICE = scnr.nextInt()) > BankAccountCreation.getBankAccountNamesSize() || USER_NAVIGATION_CHOICE < 0) {
 
-            System.out.println("Invalid input. You must choose an account or go back to the main menu.");
+            System.out.print("Invalid input. You must choose an account or go back to the main menu: ");
 
             scnr.nextLine(); // consume the entire line of input
 

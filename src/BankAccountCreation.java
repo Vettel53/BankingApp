@@ -3,12 +3,13 @@ public class BankAccountCreation {
     private static final ArrayList<String> BANK_ACCOUNT_NAMES = new ArrayList<>();
     private static final ArrayList<String> BANK_ACCOUNT_PINS = new ArrayList<>();
     private static final ArrayList<String> BANK_ACCOUNT_ROUTENUM = new ArrayList<>();
+    private static final ArrayList<Integer> BANK_ACCOUNT_BALANCE = new ArrayList<>();
     private static final Scanner scnr = new Scanner(System.in);
     private static final Random random = new Random();
 
     public static void initializeAccountCreation() {
 
-    createBankAccount();
+        createBankAccount();
 
     }
 
@@ -42,9 +43,27 @@ public class BankAccountCreation {
 
     }
 
-    public static ArrayList<String> returnBankAccountRouteNum() {
+    public static String returnBankAccountPin(int index) {
+
+        return BankAccountCreation.BANK_ACCOUNT_PINS.get(index);
+
+    }
+
+    public static ArrayList<String> returnBankAccountRouteNums() {
 
         return BankAccountCreation.BANK_ACCOUNT_ROUTENUM;
+
+    }
+
+    public static ArrayList<Integer> returnBankAccountBalance() {
+
+        return BankAccountCreation.BANK_ACCOUNT_BALANCE;
+
+    }
+
+    public static int returnAccountBalance(int index) {
+
+        return BankAccountCreation.BANK_ACCOUNT_BALANCE.get(index);
 
     }
 
@@ -75,6 +94,7 @@ public class BankAccountCreation {
         BANK_ACCOUNT_NAMES.add(BANK_ACCOUNT_NAME);
         BANK_ACCOUNT_PINS.add(accountPin);
         BANK_ACCOUNT_ROUTENUM.add(createRoutingNumber());
+        BANK_ACCOUNT_BALANCE.add(500);
 
         // Sleep to smooth out the series of outputs
         //sleep(1000);
@@ -126,7 +146,6 @@ public class BankAccountCreation {
 
             System.out.printf("%-20s %-15s %-10s\n", "Account Holder", "Routing ID", "Balance");
 
-            // get rid of balance and make user pick which account to log into using pin to view balance and other transactions
             for (int i = 0; i < BANK_ACCOUNT_NAMES.size(); i++) {
                 System.out.printf("%-20s %-15s %-10s\n", i + 1 + ". " + BANK_ACCOUNT_NAMES.get(i), "ID-" + BANK_ACCOUNT_ROUTENUM.get(i), "Must log in");
             }
